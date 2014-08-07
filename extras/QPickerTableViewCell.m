@@ -42,12 +42,6 @@ NSString * const QPickerTableViewCellIdentifier = @"QPickerTableViewCell";
     return (QPickerElement *)_entryElement;
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    [super textFieldDidEndEditing:textField];
-    self.selected = NO;  
-}
-
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [_pickerView sizeToFit];
@@ -79,7 +73,7 @@ NSString * const QPickerTableViewCellIdentifier = @"QPickerTableViewCell";
     [super prepareForElement:element inTableView:tableView];
     
     QPickerElement *pickerElement = (QPickerElement *)element;
-
+    
     if ([pickerElement.valueParser respondsToSelector:@selector(presentationOfObject:)]) {
         self.detailTextLabel.text = [pickerElement.valueParser presentationOfObject:pickerElement.value];
         _textField.text = [pickerElement.valueParser presentationOfObject:pickerElement.value];
@@ -130,7 +124,7 @@ NSString * const QPickerTableViewCellIdentifier = @"QPickerTableViewCell";
             [componentsValues addObject:[NSNull null]];
         }
     }
-
+    
     NSLog(@"AA%@", [self.pickerElement.valueParser objectFromComponentsValues:componentsValues]);
     return [self.pickerElement.valueParser objectFromComponentsValues:componentsValues];
 }
