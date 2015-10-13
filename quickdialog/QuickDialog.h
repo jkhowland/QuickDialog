@@ -12,6 +12,7 @@
 // permissions and limitations under the License.
 //
 
+@import UIKit;
 
 #import "QuickDialogController.h"
 #import "QuickDialogController+Navigation.h"
