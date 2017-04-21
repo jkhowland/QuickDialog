@@ -33,7 +33,7 @@
 
 - (UITableViewCell *)getCellForTableView:(QuickDialogTableView *)tableView controller:(QuickDialogController *)controller
 {
-    QPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:QPickerTableViewCellIdentifier];
+    QPickerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QPickerTableViewCell"];
     if (cell == nil) {
         cell = [[QPickerTableViewCell alloc] init];
     }
